@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.21)
+project(ModernEnigma LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+qt_standard_project_setup()
+
+qt_add_executable(enigma_gui core/main.cpp
+    gui/main.cpp
+    core/srcs/api.cpp)
+target_link_libraries(enigma_gui PRIVATE Qt6::Widgets)
